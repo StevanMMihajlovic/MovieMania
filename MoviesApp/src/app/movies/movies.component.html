@@ -1,0 +1,18 @@
+<br>
+<div class="row">
+    <div class="col-6">
+        <app-pagination [actual]="params.page" [colSize]="movies.count" [pageSize]="params.pageSize" (page)=updatePage($event)></app-pagination>
+    </div>
+    <div class="col-6">
+        <label for="input">Sort by:</label>
+        <select name="input" [(ngModel)]="params.sort" (change)="getMovies()">
+            <option value="rating">Rating</option>
+            <option value="year">Year</option>
+        </select>
+        <button class="btn btn-primary offset-1" type="button" (click)="sortDir()">-></button>
+    </div>
+</div>
+<br>
+<div class="row">
+    <app-onemovie [movies]="movies"></app-onemovie>
+</div>

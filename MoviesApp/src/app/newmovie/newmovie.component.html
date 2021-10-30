@@ -1,0 +1,86 @@
+<br>
+<form (ngSubmit)="submitMovie()">
+    <div class="row">
+        <div class="col-2">
+            <small>Name:</small>
+        </div>
+        <div class="col">
+            <input type="text" name="name" id="name" size="90px" [(ngModel)]="newMovie.name">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-2">
+            <small>Description:</small>
+        </div>
+        <div class="col">
+            <textarea type="text" name="description" id="description"  cols="93" rows="3" [(ngModel)]="newMovie.description"></textarea>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-2">
+            <small>Year</small>
+        </div>
+        <div class="col">
+            <input type="text" name="year" id="year" size="90px" [(ngModel)]="newMovie.year">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-2">
+            <small>Rating</small>
+        </div>
+        <div class="col">
+            <input type="text" name="rating" id="rating" size="90px" [(ngModel)]="newMovie.rating">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-2">
+            <small>Duration</small>
+        </div>
+        <div class="col">
+            <input type="text" name="duration" id="duration" size="90px" [(ngModel)]="newMovie.duration">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-2">
+            <small>Director</small>
+        </div>
+        <div class="col">
+            <input type="text" name="director" id="director" size="90px" [(ngModel)]="newMovie.director">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-2">
+            <small>Genre</small>
+        </div>
+        <div class="col">
+            <select name="sel" id="sel" [(ngModel)]="newMovie.genre" >
+                <option *ngFor="let i of genres.results" value="{{i.name}}">{{i.name}}</option>
+            </select>
+        </div>
+        <div class="col offset-1">
+            <button class="btn btn-primary" type="button" (click)="showMore()">+</button>
+        </div>
+    </div>
+    <br>
+    <div class="form-group row">
+		<div class="col">
+			<button class="btn btn-primary" type="submit">Save</button>
+		</div>
+	</div>
+    <br>
+    <div class="row" *ngIf="show">
+        <div class="col-2">
+            <small>Enter new genre:</small>
+        </div>
+        <div class="col">
+            <input type="text" name="genre" id="genre" size="60px" [(ngModel)]="newGenre.name">
+            <button class="btn btn-primary offset-1" type="button" (click)=submitGenre()>Add new genre</button>
+        </div>
+    </div>
+</form>

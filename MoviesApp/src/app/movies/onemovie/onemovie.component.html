@@ -1,0 +1,7 @@
+<div class="row siva" *ngFor="let movie of movies.results" [routerLink]="['/movies',movie._id]">
+    <h1 style="color: cornflowerblue;">{{movie.name}} <span style="color: black;">({{movie.year}})</span></h1>
+    <p>{{movie.description}}</p>
+    <div><img src="assets/images/gold_star.png" width="20px">{{movie.rating}}</div><div class="offset-11">{{movie.duration}}mins.</div>
+    <div class="bela"><br></div>
+</div>
+

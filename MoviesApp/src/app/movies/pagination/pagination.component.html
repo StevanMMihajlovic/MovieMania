@@ -1,0 +1,10 @@
+<nav aria-label="...">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" (click)="updatePage(actual-1)" *ngIf="actual>1">Previous</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" (click)="updatePage(actual+1)" *ngIf="actual*pageSize<=colSize">Next</a>
+      </li>
+    </ul>
+  </nav>
